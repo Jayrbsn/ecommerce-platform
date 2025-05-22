@@ -12,7 +12,7 @@
         <div class="container">
             <h1>My E-Commerce Platform</h1>
             <nav>
-                <a href="/index.php" class="text-white me-3">Home</a>
+                <a href="/ecommerce-platform/index.php" class="text-white me-3">Home</a>
                 <a href="/ecommerce-platform/customer/products.php" class="text-white me-3">Products</a>
                 <a href="/ecommerce-platform/customer/cart.php" class="text-white me-3">Cart</a>
                 <a href="/ecommerce-platform/customer/login.php" class="text-white me-3">Login</a>
