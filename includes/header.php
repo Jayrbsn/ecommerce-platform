@@ -14,7 +14,7 @@
             <nav>
                 <a href="/index.php" class="text-white me-3">Home</a>
                 <a href="/ecommerce-platform/customer/products.php" class="text-white me-3">Products</a>
-                <a href="/cart.php" class="text-white me-3">Cart</a>
+                <a href="/ecommerce-platform/customer/cart.php" class="text-white me-3">Cart</a>
                 <a href="/ecommerce-platform/customer/login.php" class="text-white me-3">Login</a>
                 <a href="/ecommerce-platform/customer/register.php" class="text-white">Register</a>
             </nav>
