@@ -5,7 +5,7 @@ include('../includes/header.php');
 
 $user_id = $_SESSION['user_id'];
 
-$sql = "SELECT o.order_id, o.total, o.order_date, t.payment_status
+$sql = "SELECT o.order_id, o.total_amount, o.order_date, t.payment_status
         FROM orders o
         LEFT JOIN transactions t ON o.order_id = t.order_id
         WHERE o.user_id = ?
@@ -35,7 +35,7 @@ $result = $stmt->get_result();
                 <?php while ($row = $result->fetch_assoc()): ?>
                     <tr>
                         <td>#<?php echo $row['order_id']; ?></td>
-                        <td>R<?php echo number_format($row['total'], 2); ?></td>
+                        <td>R<?php echo number_format($row['total_amount'], 2); ?></td>
                         <td><?php echo date('Y-m-d H:i', strtotime($row['order_date'])); ?></td>
                         <td><?php echo htmlspecialchars($row['payment_status'] ?? 'Pending'); ?></td>
                     </tr>

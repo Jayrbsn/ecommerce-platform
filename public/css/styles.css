@@ -100,6 +100,20 @@ body {
     background-color: #fafafa;
 }
 
+.product-detail {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: #fdfdfd;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.product-detail p {
+    margin-bottom: 1rem;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

@@ -1,3 +1,4 @@
+<!--<?php session_start(); ?>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +16,14 @@
                 <a href="/ecommerce-platform/index.php" class="text-white me-3">Home</a>
                 <a href="/ecommerce-platform/customer/products.php" class="text-white me-3">Products</a>
                 <a href="/ecommerce-platform/customer/cart.php" class="text-white me-3">Cart</a>
-                <a href="/ecommerce-platform/customer/login.php" class="text-white me-3">Login</a>
-                <a href="/ecommerce-platform/customer/register.php" class="text-white">Register</a>
+
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="/ecommerce-platform/customer/orders.php" class="text-white me-3">Orders</a>
+                    <a href="/ecommerce-platform/customer/logout.php" class="text-white">Logout</a>
+                <?php else: ?>
+                    <a href="/ecommerce-platform/customer/login.php" class="text-white me-3">Login</a>
+                    <a href="/ecommerce-platform/customer/register.php" class="text-white">Register</a>
+                <?php endif; ?>
             </nav>
         </div>
     </header>

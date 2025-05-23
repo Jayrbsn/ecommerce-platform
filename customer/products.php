@@ -15,7 +15,7 @@ $result = $conn->query($sql);
     <div class="product-card">
         <h3><?php echo htmlspecialchars($row['name']); ?></h3>
         <p>Price: R<?php echo number_format($row['price'], 2); ?></p>
-        <p><a href="product_detail.php?id=<?php echo $row['product_id']; ?>">View Details</a></p>
+        <p><a href="/ecommerce-platform/customer/product_detail.php?id=<?php echo $row['product_id']; ?>">View Details</a></p>
         
         <form action="../actions/add_to_cart.php" method="POST">
             <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
