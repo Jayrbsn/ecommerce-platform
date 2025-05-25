@@ -32,3 +32,4 @@ $result = $conn->query($sql);
 </div>
 
 <?php include('../includes/footer.php'); ?>
+<script src="../public/js/scripts.js"></script>

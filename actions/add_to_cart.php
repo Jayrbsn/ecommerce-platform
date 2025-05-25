@@ -22,6 +22,5 @@ if (isset($_POST['product_id']) && isset($_POST['quantity'])) {
     }
 }
 
-// Redirect back to products page
-header('Location: ../customer/products.php');
+header('Location: ../customer/products.php?added=1');
 exit;

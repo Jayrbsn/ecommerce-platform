@@ -39,10 +39,39 @@ $result = $stmt->get_result();
                         <td><?php echo date('Y-m-d H:i', strtotime($row['order_date'])); ?></td>
                         <td><?php echo htmlspecialchars($row['payment_status'] ?? 'Pending'); ?></td>
                     </tr>
+
+                    <!-- Show order items below this row -->
+                    <tr>
+                        <td colspan="4">
+                            <strong>Items:</strong>
+                            <ul>
+                                <?php
+                                $items_sql = "SELECT p.name, oi.quantity, oi.price
+                                              FROM order_items oi
+                                              JOIN products p ON oi.product_id = p.product_id
+                                              WHERE oi.order_id = ?";
+                                $items_stmt = $conn->prepare($items_sql);
+                                $items_stmt->bind_param("i", $row['order_id']);
+                                $items_stmt->execute();
+                                $items_result = $items_stmt->get_result();
+                                
+                                while ($item = $items_result->fetch_assoc()):
+                                ?>
+                                    <li>
+                                        <?php echo htmlspecialchars($item['name']); ?> - 
+                                        Quantity: <?php echo $item['quantity']; ?> - 
+                                        Price: R<?php echo number_format($item['price'], 2); ?>
+                                    </li>
+                                <?php endwhile; ?>
+                                <?php $items_stmt->close(); ?>
+                            </ul>
+                        </td>
+                    </tr>
+
                 <?php endwhile; ?>
             </tbody>
         </table>
-                </div>
+        </div>
     <?php else: ?>
         <p>You have no orders yet.</p>
     <?php endif; ?>
