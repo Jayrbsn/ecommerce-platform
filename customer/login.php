@@ -27,7 +27,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['email'] = $email_db;
                 $_SESSION['role'] = $role;
 
-                header("Location: ../customer/products.php");
+                // Redirect based on role
+                if ($role === 'admin') {
+                    header("Location: ../admin/dashboard.php");
+                } else {
+                    header("Location: ../customer/products.php");
+                }
                 exit();
             } else {
                 $errors[] = "Invalid password.";
