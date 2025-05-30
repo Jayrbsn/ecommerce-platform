@@ -2,7 +2,7 @@
 
 <footer class="bg-light text-center py-4 mt-5">
     <div class="container">
-        <p>&copy; <?php echo date('Y'); ?> My C-2-C Platform. All rights reserved.</p>
+        <p>&copy; <?php echo date('Y'); ?> ITECA Prototype. All rights reserved.</p>
     </div>
 </footer>
 

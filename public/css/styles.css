@@ -143,6 +143,23 @@ body {
     color: #007bff;
 }
 
+.admin-links {
+    list-style-type: none;
+    padding: 0;
+}
+.admin-links li {
+    margin: 10px 0;
+}
+.admin-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.admin-links a:hover {
+    text-decoration: underline;
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

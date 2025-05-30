@@ -5,8 +5,8 @@ include('includes/header.php');
 
 <div class="home-banner">
     <div class="banner-content">
-        <h2>Welcome to My E-Commerce Platform</h2>
-        <p>Buy and sell directly with other users. Safe. Fast. Easy.</p>
+        <h2>Welcome to The ITECA E-Commerce Platform</h2>
+        <p>Buy and sell directly with other users. Safe, Easy and Affordable!</p>
         <a href="/ecommerce-platform/customer/products.php" class="btn btn-primary">Browse Products</a>
     </div>
 </div>
