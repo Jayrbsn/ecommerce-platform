@@ -25,7 +25,7 @@ $result = $conn->query($sql);
                     <p>Price: R<?php echo number_format($row['price'], 2); ?></p>
 
                     <?php if ($role === 'seller' && $row['user_id'] == $user_id): ?>
-                        <a href="../actions/edit_product.php?id=<?php echo $row['product_id']; ?>" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="../actions/edit_product_seller.php?id=<?php echo $row['product_id']; ?>" class="btn btn-sm btn-warning">Edit</a>
                         <a href="../actions/delete_product.php?id=<?php echo $row['product_id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
                     <?php else: ?>
                         <p><a href="/ecommerce-platform/customer/product_detail.php?id=<?php echo $row['product_id']; ?>">View Details</a></p>

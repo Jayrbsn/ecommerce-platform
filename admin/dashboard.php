@@ -24,6 +24,12 @@ include('../includes/header.php');
             <p>See all customer orders.</p>
             <a href="manage_orders.php" class="btn btn-primary">Go to Orders</a>
         </div>
+
+        <div class="admin-card">
+            <h3>View Reoprts</h3>
+            <p>See stats</p>
+            <a href="reports.php" class="btn btn-primary">Go to Reports</a>
+        </div>
     </div>
 </div>
 
