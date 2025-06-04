@@ -13,7 +13,6 @@ if (empty($cart)) {
     exit();
 }
 
-// 1. Fetch product details for cart items
 $total = 0;
 $orderItems = [];
 
@@ -41,7 +40,6 @@ if ($result && $result->num_rows > 0) {
     exit();
 }
 
-// 2. Insert into orders table
 $orderSql = "INSERT INTO orders (user_id, total_amount, order_date) VALUES (?, ?, NOW())";
 $stmt = $conn->prepare($orderSql);
 $stmt->bind_param("id", $user_id, $total);
@@ -49,7 +47,6 @@ $stmt->execute();
 $order_id = $stmt->insert_id;
 $stmt->close();
 
-// 3. Insert order items
 $itemSql = "INSERT INTO order_items (order_id, product_id, quantity, price) VALUES (?, ?, ?, ?)";
 $stmt = $conn->prepare($itemSql);
 foreach ($orderItems as $item) {
@@ -58,14 +55,12 @@ foreach ($orderItems as $item) {
 }
 $stmt->close();
 
-// 4. Create dummy transaction
 $txnSql = "INSERT INTO transactions (order_id, payment_status, transaction_date) VALUES (?, 'Paid', NOW())";
 $stmt = $conn->prepare($txnSql);
 $stmt->bind_param("i", $order_id);
 $stmt->execute();
 $stmt->close();
 
-// 5. Clear cart
 unset($_SESSION['cart']);
 ?>
 

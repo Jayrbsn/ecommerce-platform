@@ -3,7 +3,6 @@ include('../includes/admin_check.php');
 include('../config/db.php');
 include('../includes/header.php');
 
-// Handle delete
 if (isset($_GET['delete'])) {
     $product_id = intval($_GET['delete']);
     $conn->query("DELETE FROM products WHERE product_id = $product_id");
@@ -11,7 +10,6 @@ if (isset($_GET['delete'])) {
     exit;
 }
 
-// Fetch products
 $result = $conn->query("SELECT * FROM products ORDER BY product_id DESC");
 ?>
 

@@ -2,7 +2,6 @@
 include('../includes/auth_check.php');
 include('../config/db.php');
 
-// Only allow sellers
 if ($_SESSION['role'] !== 'seller') {
     header("Location: ../customer/products.php");
     exit();
@@ -16,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stock = intval($_POST['stock']);
     $user_id = $_SESSION['user_id'];
 
-    // Ensure seller owns the product
     $check = $conn->prepare("SELECT product_id FROM products WHERE product_id = ? AND user_id = ?");
     $check->bind_param("ii", $product_id, $user_id);
     $check->execute();

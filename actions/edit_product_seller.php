@@ -2,7 +2,6 @@
 include('../includes/auth_check.php');
 include('../config/db.php');
 
-// Check if the user is a seller
 if ($_SESSION['role'] !== 'seller') {
     header("Location: ../customer/products.php");
     exit();
@@ -11,7 +10,6 @@ if ($_SESSION['role'] !== 'seller') {
 $id = intval($_GET['id']);
 $user_id = $_SESSION['user_id'];
 
-// Fetch product and ensure it belongs to the logged-in seller
 $stmt = $conn->prepare("SELECT * FROM products WHERE product_id = ? AND user_id = ?");
 $stmt->bind_param("ii", $id, $user_id);
 $stmt->execute();

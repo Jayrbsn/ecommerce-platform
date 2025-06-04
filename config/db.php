@@ -1,13 +1,13 @@
 <?php
 $host = 'localhost';
 $dbname = 'deliverable2';  
-$username = 'student';        
-$password = 'student';            
+// $username = 'student';        
+// $password = 'student';   
+$username = 'root';        
+$password = '';          
 
-// Create connection
 $conn = new mysqli($host, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die('Connection failed: ' . $conn->connect_error);
 }

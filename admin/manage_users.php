@@ -6,7 +6,6 @@ require_once '../includes/header.php';
 if (isset($_GET['delete'])) {
     $delete_id = intval($_GET['delete']);
 
-    // Check for existing products
     $checkProducts = $conn->prepare("SELECT COUNT(*) FROM products WHERE user_id = ?");
     $checkProducts->bind_param("i", $delete_id);
     $checkProducts->execute();
@@ -14,7 +13,6 @@ if (isset($_GET['delete'])) {
     $checkProducts->fetch();
     $checkProducts->close();
 
-    // Check for existing orders
     $checkOrders = $conn->prepare("SELECT COUNT(*) FROM orders WHERE user_id = ?");
     $checkOrders->bind_param("i", $delete_id);
     $checkOrders->execute();
@@ -27,7 +25,6 @@ if (isset($_GET['delete'])) {
         exit();
     }
 
-    // Safe to delete
     $stmt = $conn->prepare("DELETE FROM users WHERE user_id = ?");
     $stmt->bind_param("i", $delete_id);
     $stmt->execute();

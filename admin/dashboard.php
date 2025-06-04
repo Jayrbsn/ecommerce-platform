@@ -26,7 +26,7 @@ include('../includes/header.php');
         </div>
 
         <div class="admin-card">
-            <h3>View Reoprts</h3>
+            <h3>View Reports</h3>
             <p>See stats</p>
             <a href="reports.php" class="btn btn-primary">Go to Reports</a>
         </div>

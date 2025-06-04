@@ -7,7 +7,6 @@ include('../includes/header.php');
 <div class="container mt-4">
     <h2>Admin Reports</h2>
 
-    <!-- 1. Total Users by Role -->
     <h4>Total Users by Role</h4>
     <table class="table table-bordered">
         <thead><tr><th>Role</th><th>Total Users</th></tr></thead>
@@ -21,7 +20,6 @@ include('../includes/header.php');
         </tbody>
     </table>
 
-    <!-- 2. Products Per Seller -->
     <h4>Products Per Seller</h4>
     <table class="table table-bordered">
         <thead><tr><th>Seller</th><th>Product Count</th></tr></thead>
@@ -39,7 +37,6 @@ include('../includes/header.php');
         </tbody>
     </table>
 
-    <!-- 3. Total Orders -->
     <h4>Total Orders</h4>
     <p>
     <?php
@@ -48,7 +45,6 @@ include('../includes/header.php');
     ?>
     </p>
 
-    <!-- 4. Total Revenue -->
     <h4>Total Revenue</h4>
     <p>
     <?php
@@ -58,7 +54,6 @@ include('../includes/header.php');
     ?>
     </p>
 
-    <!-- 5. Top-Selling Products -->
     <h4>Top-Selling Products</h4>
     <table class="table table-bordered">
         <thead><tr><th>Product Name</th><th>Total Sold</th></tr></thead>
@@ -77,7 +72,6 @@ include('../includes/header.php');
         </tbody>
     </table>
 
-    <!-- 6. Orders per Day (last 7 days) -->
     <h4>Orders Per Day (Last 7 Days)</h4>
     <table class="table table-bordered">
         <thead><tr><th>Date</th><th>Order Count</th></tr></thead>

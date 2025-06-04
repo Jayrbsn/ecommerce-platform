@@ -4,7 +4,6 @@ include('../config/db.php');
 include('../includes/header.php');
 include('../includes/auth_check.php');
 
-// Initialize cart
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 $products = [];
 
